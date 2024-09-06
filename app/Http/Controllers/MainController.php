@@ -29,4 +29,12 @@ class MainController extends Controller
     {
         return view('main.about');
     }
+    /**
+     * Retourne la page "Hackathon"
+     */
+
+    public function hackathon()
+    {
+        return view('main.hackathon');
+    }
 }

@@ -14,6 +14,8 @@ include('inc/api.php');
 // Routes de base
 Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/hackathon', [MainController::class, 'hackathon'])->name('hackathon');
+
 
 // Routes d'authentification et de gestion d'équipe
 Route::get('/login', [EquipeController::class, 'login'])->name('login');
