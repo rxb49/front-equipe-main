@@ -47,7 +47,12 @@
             <div v-else>
                 <a class="btn bg-green m-2 button-home" href="#" @click.prevent="participantsIsShown = false">←</a> Listes des participants
                 <ul class="pt-3">
-                    <li class="member" v-for="p in participants">🧑‍💻 @{{p['nomequipe']}}</li>
+                    <li class="member" v-for="p in participants">🧑‍💻 @{{p['nomequipe']}}
+                        <a class="btn bg-green m-2 button-home" href="/membreequipe">
+                            <span>Membre de l'equipe @{{p['nomequipe']}}</span>
+                        </a>
+                    </li>
+                    
                 </ul>
 
             </div>
@@ -78,7 +83,8 @@
                         .then(() => this.participantsIsShown = true) // Affiche la liste
                         .then(() => this.loading = false) // Arrêt de l'état chargement
                 }
-            }
+            },
+
         }).mount()
     </script>
 @endsection

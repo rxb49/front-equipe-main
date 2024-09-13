@@ -37,4 +37,10 @@ class MainController extends Controller
     {
         return view('main.hackathon');
     }
+
+    public function listHackathon()
+    {
+        $hackathon = Hackathon::getHackathon();
+
+    }
 }

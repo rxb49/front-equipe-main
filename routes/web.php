@@ -22,6 +22,7 @@ Route::get('/login', [EquipeController::class, 'login'])->name('login');
 Route::post('/login', [EquipeController::class, 'connect'])->name('connect');
 Route::get('/join', [HackathonController::class, 'join'])->name('join');
 Route::any('/create-team', [EquipeController::class, 'create'])->name('create-team'); // Any pour gérer les GET et POST
+Route::get('/membreequipe', function () {return "membreequipe";});
 
 // Routes de l'API pour la documentation et les listes
 Route::get('/doc-api/', [ApiDocController::class, 'liste'])->name('doc-api');

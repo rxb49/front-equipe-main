@@ -39,4 +39,8 @@ class HackathonController extends Controller
             return redirect("/")->withErrors(['errors' => "Une erreur est survenue lors de l'inscription au hackathon."]);
         }
     }
+
+    public function IsAlreadyJoin(){
+
+    }
 }
