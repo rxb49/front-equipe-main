@@ -6,6 +6,7 @@ use App\Http\Controllers\HackathonController;
 use App\Http\Controllers\MainController;
 use App\Http\Middleware\IsEquipeConnected;
 use App\Models\Equipe;
+use App\Models\Membre;
 use App\Utils\SessionHelpers;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,13 @@ Route::get('/login', [EquipeController::class, 'login'])->name('login');
 Route::post('/login', [EquipeController::class, 'connect'])->name('connect');
 Route::get('/join', [HackathonController::class, 'join'])->name('join');
 Route::any('/create-team', [EquipeController::class, 'create'])->name('create-team'); // Any pour gérer les GET et POST
-Route::get('/membreequipe', function () {return "membreequipe";});
+Route::get('/memberequipe', function () {
+    $membres = Membre::all();
+
+    return view('memberequipe', [
+        'memberequipe' => $membres
+    ]);
+});
 
 // Routes de l'API pour la documentation et les listes
 Route::get('/doc-api/', [ApiDocController::class, 'liste'])->name('doc-api');

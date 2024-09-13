@@ -26,8 +26,8 @@ class HackathonController extends Controller
         try{
             // Inscription de l'équipe au hackathon
             $inscription = new Inscrire();
-            $inscription->idh = $idh;
-            $inscription->ide = $equipe->idequipe;
+            $inscription->idhackathon = $idh;
+            $inscription->idequipe = $equipe->idequipe;
             $inscription->save();
 
             // TODO : envoyer un email de confirmation à l'équipe en utilisant la classe EmailHelpers, et la méthode sendEmail (exemple présent dans le contrôleur EquipeController)

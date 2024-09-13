@@ -43,4 +43,8 @@ class MainController extends Controller
         $hackathon = Hackathon::getHackathon();
 
     }
+
+    public function memberequipe(){
+        return view('main.memberequipe');
+    }
 }
